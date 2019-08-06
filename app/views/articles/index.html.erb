@@ -1,0 +1,14 @@
+<h1> Today's Top Stories </h1>
+<% @articles.each do |article| %>
+  <br>
+  <div class='list-box'>
+        <%= link_to article.title, article_path(article) %>
+        <%= link_to  article_path(article), method: :delete do %>
+        <img src="https://image.freepik.com/free-icon/trash-bin-symbol_318-10194.jpg" alt="checked-box" class='check-box'>
+        <% end %>
+  </div>
+  <br>
+<% end %>
+
+
+<%= link_to 'Add a new article', new_article_path%>
